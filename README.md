@@ -36,7 +36,9 @@ ensuite on peut vérifier que la clé a été ajoutée dans le fichier .ssh/auth
 
 	Configuration du firewall
 pour savoir si ufw est actif : sudo ufw status
+activer les logs avec sudo ufw logging on
 s’il ne l’est pas : sudo enable ufw
+definir les regles par default ufw : 
 pour voir les règles de configuration du pare-feu : sudo ufw status verbose (par défaults, toutes les connections entrantes sont refusées, et les sortantes sont autorisées)
 Pour ajouter des règles de pare-feu : sudo ufw allow [port]
 on ajoute donc 63000 (port SSH), 80 (HTTP) et 443 (HTTPS)
@@ -61,3 +63,9 @@ TEST = nmap -v 192.168.1.15 puis regarder sudo grep « attackalert » —binar
 voir les services = sudo systemctl soit sudo service —status-all (+ sils sont actifs sinon -)
 sudo systemctl disable nom.service (pour empêcher le service de démarrer automatiquement)
 sudo systemctl stop nom.service (pour arrêter le service)
+
+Pour les scripts 
+sudo crontab -e
+
+ne pas oublier les dos sur http et https
+
